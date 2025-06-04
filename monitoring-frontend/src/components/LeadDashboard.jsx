@@ -20,7 +20,7 @@ function LeadDashboard() {
   const [selectedStatus, setSelectedStatus] = useState('');
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/contacts')
+    axios.get(`${process.env.REACT_APP_API_URL}/contacts`)
       .then(res => setContacts(res.data))
       .catch(err => console.error('Error fetching contacts:', err));
   }, []);
